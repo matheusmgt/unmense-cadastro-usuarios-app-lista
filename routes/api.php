@@ -19,19 +19,19 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [LoginController::class, 'login']);
 Route::post('user', [UserController::class, 'store']);
 
-Route::get('user', [UserController::class, 'index']);
-Route::put('user', [UserController::class, 'update']);
-Route::get('user/{id}', [UserController::class, 'show']);
-Route::delete('user/{id}', [UserController::class, 'destroy']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-
+    
     Route::get('logout', [LoginController::class, 'logout']);
     Route::get('chat/{user_receive_id}', [ChatController::class, 'show']);
     Route::post('chat', [ChatController::class, 'store']);
     
     Route::get('friend', [UserController::class, 'friend_list']);
     Route::get('get_user_logged', [UserController::class, 'get_user_logged']);
-
+    
+    Route::get('user', [UserController::class, 'index']);
+    Route::put('user', [UserController::class, 'update']);
+    Route::get('user/{id}', [UserController::class, 'show']);
+    Route::delete('user/{id}', [UserController::class, 'destroy']);
 });
