@@ -1,0 +1,24 @@
+.center-vertically {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg-container {
+    background: rgb(125, 137, 144);
+    background: linear-gradient(225deg, rgba(125, 137, 144, 1) 0%, rgba(133, 153, 134, 1) 20%, rgba(140, 135, 52, 1) 50%, rgba(84, 121, 140, 1) 75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-container>img {
+    width: 25%;
+}
+
+@media only screen and (max-width: 990px) {
+    .bg-container {
+        display: none !important;
+    } 
+}
